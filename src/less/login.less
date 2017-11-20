@@ -1,0 +1,108 @@
+@import './index.less';
+
+.g-bd{
+  padding:0 17px;
+  .m-item{
+    padding-top: 53px;
+    .m-tit{
+      margin-bottom: 58px;
+      text-align: center;
+      .title{
+        font-size: 24px;
+        color: #FFA238;
+        letter-spacing: 0;
+      }
+      .role{
+        font-size: 12px;
+        color: #FFA238;
+        position: relative;
+        &:before{
+          content: '';
+          position: absolute;
+          left: 37px;
+          top: 50%;
+          width: 37px;
+          height: 3px;
+          background-image: linear-gradient(90deg, rgba(255,162,56,0.00) 0%, #FFA238 100%);
+        }
+        &:after{
+          content: '';
+          position: absolute;
+          right: 37px;
+          top: 50%;
+          width: 37px;
+          height: 5px;
+          background-image: linear-gradient(-90deg, rgba(255,162,56,0.00) 0%, #FFA238 100%);
+        }
+      }
+    }
+    .m-cont{
+      font-size: 14px;
+      .top{
+        padding: 0 10px;
+      }
+      .input-cont{
+        width: 100%;
+        .border-1px(#F0F0F0);
+        display: flex;
+        align-items: center;
+        &.ip-inline{
+          justify-content: space-between;
+        }
+        &.ip-login{
+          padding: 0;
+          background: #FFA238;
+          border-radius: 6px;
+          color: #fff;
+          font-size: 16px;
+          height: 40px;
+          line-height: 40px;
+          margin-top: 58px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          .border-none();
+
+        }
+        label{
+          flex: 0 0 60px;
+          width: 60px;
+          text-align: left;
+        }
+        input{
+          flex:1;
+          -webkit-appearance: none;
+          outline: none;
+          height: 50px;
+          line-height: 50px;
+          box-sizing: border-box;
+          display: inline-block;
+          border: none;
+          color: #979797;
+        }
+        button{
+          outline: none;
+          border:none;
+          background: transparent;
+          width: 100%;
+        }
+        .code{
+          display: flex;
+          align-items: center;
+        }
+        .code-btn{
+          flex:0 0 80px;
+          text-align: center;
+          width: 80px;
+          height: 26px;
+          line-height: 26px;
+          font-size: 12px;
+          color: #FFA238;
+          border: 1px solid #FFA238;
+          border-radius: 4px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
