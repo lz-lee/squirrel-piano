@@ -1,0 +1,28 @@
+@import "./index.less";
+
+input[type="radio"]{
+  display: none;
+}
+.m-date-tab{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  .times{
+    flex:1;
+    text-align: center;
+    .default{
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+    &.selected{
+      color: #F79D36;
+      .border-1px(4px;#F79D36;);
+      &:after{
+        left: 12px;
+        bottom: -20px;
+        width: 50%;
+      }
+    }
+  }
+}
