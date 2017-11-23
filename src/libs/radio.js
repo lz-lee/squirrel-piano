@@ -18,6 +18,7 @@ $('.time-picker').on('change', 'input[type="radio"]', function() {
   }
 })
 
+
 export function generatorDate() {
   let dateCount = 9
 
@@ -55,6 +56,8 @@ export function generatorDate() {
 
       $('#date').append(html)
   }
+  
+  $('.m-date-tab').find('.times').eq(0).addClass('selected')
 }
 
 export default checked

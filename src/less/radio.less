@@ -7,21 +7,30 @@ input[type="radio"]{
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  justify-content: space-between;
   .times{
-    flex:1;
     text-align: center;
     .default{
       display: block;
       height: 100%;
       width: 100%;
+      .date{
+        font-size: .24rem;
+        color:#999;
+      }
     }
     &.selected{
       color: #F79D36;
       .border-1px(4px;#F79D36;);
+      .default{
+        .date{
+          color:inherit;
+        }
+      }
       &:after{
-        left: .24rem;
-        bottom: -.4rem;
-        width: 50%;
+        left: .08rem;
+        bottom: -.22rem;
+        width: .5rem;
       }
     }
   }

@@ -47,31 +47,33 @@
         .list{
           display: block;
           position: relative;
-          padding: .44rem .4rem .44rem 0;
+          padding: .42rem .66rem .4rem 0;
           .border-1px(1px; #f0f0f0);
-          .class-name{
+          .class-time{
             font-size: .3rem;
-            font-weight: 500;
+            font-weight: bold;
             color: #444444;
             margin-bottom: 6px;
           }
           .class-info{
+            width: 3.38rem;
             font-size: .24rem;
             color: #666666;
+            display: flex;
+            justify-content: space-between;
           }
           &:before{
             content: '';
             display: block;
             position: absolute;
-            top: 50%;
+            bottom: .64rem;
             right: .66rem;
-            height: .26rem;
-            width: .26rem;
-            border-style: solid;
-            border-width: 2px;
-            border-color: #a0a0a0 #a0a0a0 transparent transparent;
-            -webkit-transform: rotate(45deg) translateX(-50%);
-            transform: rotate(45deg) translateX(-50%);
+            height: .38rem;
+            width: .38rem;
+            .bg-image('../img/more');
+            background-size: contain;
+            background-repeat: no-repeat;
+
           }
         }
       }
@@ -113,7 +115,7 @@
       .title{
         font-size: .32rem;
         color: #444444;
-        font-weight: 500;
+        font-weight: bold;
       }
       &.course-list{
         padding: .46rem 0 .36rem .14rem;
@@ -125,9 +127,10 @@
           font-size: .28rem;
           color: #666666;
           .list{
-            padding-left: .52rem;
+            padding-left: .54rem;
             background-repeat: no-repeat;
-            background-size: contain;
+            background-size: .4rem;
+            background-position: left center;
             &.time{
               .bg-image('../img/time');
               margin-bottom: .2rem;  
@@ -150,7 +153,8 @@
             background: #FFA238;
             position: absolute;
             left: 0;
-            top: 19%;
+            top: 50%;
+            transform: translateY(-50%);
           }
         }
       }
@@ -173,8 +177,8 @@
           }
           .name{
             font-size: .32rem;
-            color: #444444;
-            font-weight: 500;
+            color: #666;
+            font-weight: bold;
           }
           .school{
             font-size: .24rem;
@@ -224,7 +228,7 @@
           padding-left: .2rem;
           .r-list{
             color: #666666;
-            margin-bottom: .36rem;
+            margin-bottom: .44rem;
             &.progress{
               .tit{
                 .bg-image('../img/progress');
@@ -259,7 +263,7 @@
             .tit{
               padding-left: .36rem;
               font-size: .28rem;
-              font-weight: 500;
+              font-weight: bold;
               background-size: .36rem;
               background-repeat: no-repeat;
               background-position: left center;
@@ -315,6 +319,32 @@
             text-align: center;
           }
         }
+        &.info-list{
+          .title{
+            font-weight: normal;
+            color: #444444;
+          }
+          .stu-info{
+            color: #666666;
+            .item{
+              margin-bottom: .12rem;
+              &:not(:first-child){
+                font-size: .28rem;
+              }
+            }
+            .stu-name{
+              font-size: .3rem;
+            }
+          }
+        }
+        &.course-list{
+          padding-bottom: .32rem;
+          .desc{
+            .time{
+              margin-bottom: 0;
+            }
+          }
+        }
       }
     }
   }
@@ -332,13 +362,17 @@
   align-content: space-between;
   flex-flow: column nowrap;
   &.course-success{
+    padding: .26rem .26rem 0 .28rem;
     .m-item{
-      padding-top:1rem;
+      height: 10.74rem;
+      padding-top:1.02rem;
       .desc{
         padding-top: .3rem;
         padding-bottom: .76rem;
         .title{
           font-size: .4rem;
+          margin-bottom: .22rem;
+          font-weight: bold;
           color: #F79D36;
         }
         p{
@@ -347,16 +381,24 @@
         }
       }
       .m-qr{
-        width: 3rem;
-        height: 3rem;
+        width: 3.5rem;
+        height: 3.5rem;
         border: 1px solid #000000;
         padding: .2rem;
-        margin: 0 auto;
+        margin: 0 auto .26rem auto;
         img{
           max-width:100%;
           height: auto;
         }
       }
+      .qr-desc{
+        color: #444444;
+        font-size: .28rem;
+      }
+    }
+    .m-footer{
+      padding: 0;
+      bottom: .38rem;
     }
   }
   .m-item{
@@ -365,7 +407,7 @@
     align-content: space-between;
     background: #FFFFFF;
     border-radius: .26rem;
-    padding: 1.76rem .68rem .84rem .68rem;
+    padding: 1.78rem .68rem .84rem .66rem;
     text-align: center;
     font-size: .32rem;
     .mask{
@@ -399,6 +441,10 @@
     }
   }
   .m-footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     padding: .44rem 0;
     font-size: .24rem;
     color: #878787;
@@ -420,7 +466,7 @@
       color: #444444;
       padding-left: .2rem;
       position: relative;
-      font-weight: 500;
+      font-weight: bold;
       &:before{
         content:'';
         width: 2px;
@@ -428,7 +474,8 @@
         background: #FFA238;
         position: absolute;
         left: 0;
-        top: 24%;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
     .m-card{
@@ -445,14 +492,14 @@
         .class-name{
           font-size: .32rem;
           color: #444444;
-          font-weight: 500;
+          font-weight: bold;
         }
         .class-count, .class-times{
           font-size: .24rem;
           color: #666666;
         }
         .class-count{
-          margin:.01rem 0 .24rem 0; 
+          margin:.1rem 0 .24rem 0; 
         }
       }
     }
@@ -528,15 +575,15 @@
       .m-box{
         padding: .36rem 0 .22rem 0;
         .border-1px(1px;#f0f0f0);
-        .title, .m-date-tab{
-          padding: 0 .38rem 0 .34rem
+        .m-date-tab{
+          padding: 0 .38rem 0 .36rem
         }
         .title{
           font-size: .32rem;
           color: #444444;
-          padding-left: .54rem;
+          padding-left: .64rem;
           position: relative;
-          font-weight: 500;
+          font-weight: bold;
           margin-bottom: .34rem;
           &:before{
             content:'';
@@ -544,8 +591,9 @@
             height: .32rem;
             background: #FFA238;
             position: absolute;
-            left: .34rem;
-            top: 24%;
+            left: .4rem;
+            top: 50%;
+            transform: translateY(-50%);
           }
         }
         .m-time{
@@ -627,7 +675,9 @@
       }
     }
     .m-footer{
-      padding: .44rem 0;
+      position: absolute;
+      bottom: 0.38rem;
+      width: 100%;
       font-size: .24rem;
       color: #878787;
       text-align: center;
