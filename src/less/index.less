@@ -56,11 +56,11 @@
             margin-bottom: 6px;
           }
           .class-info{
-            width: 3.38rem;
             font-size: .24rem;
             color: #666666;
-            display: flex;
-            justify-content: space-between;
+            .class-info-d{
+              margin-right: .3rem;
+            }
           }
           &:before{
             content: '';
@@ -99,6 +99,13 @@
         display: none;
         &.selected{
           display: block;
+        }
+        .list{
+          .class-info{
+            width: 3.38rem;
+            display: flex;
+            justify-content: space-between;
+          }
         }
       }
     }
@@ -671,6 +678,10 @@
         }
         .desc{
           text-align: center
+        }
+        &:nth-child(2){
+          padding-left: 0;
+          .border-none();
         }
       }
     }
