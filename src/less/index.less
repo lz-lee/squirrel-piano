@@ -2,27 +2,27 @@
 @import "./mixin.less";
 
 .footer{
-  width: 200px;
+  width: 4rem;
   position: absolute;
-  bottom: 19px;
+  bottom: .38rem;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 12px;
+  font-size: .24rem;
   color: #878787;
 }
 .my-course{
   .m-item{
     .m-tit{
-      padding: 0 22px;
+      padding: 0 .44rem;
       .border-1px(1px;#f0f0f0);
       .m-tab{
-        height: 50px;
-        line-height: 50px;
+        height: 1rem;
+        line-height: 1rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
         .course{
-          font-size: 16px;
+          font-size: .32rem;
           text-align: center;
           &.selected{
             color: #FFA238;
@@ -30,14 +30,14 @@
           }
         }
         .line{
-          height: 14px;
+          height: .28rem;
           width: 1px;
           background: #D8D8D8;
         }
       }
     }
     .m-cont{
-      padding: 0 0 0 22px;
+      padding: 0 0 0 .44rem;
       .m-list{
         display: none;
         transition: all .3s linear;
@@ -47,16 +47,16 @@
         .list{
           display: block;
           position: relative;
-          padding: 22px 20px 22px 0;
+          padding: .44rem .4rem .44rem 0;
           .border-1px(1px; #f0f0f0);
           .class-name{
-            font-size: 15px;
+            font-size: .3rem;
             font-weight: 500;
             color: #444444;
             margin-bottom: 6px;
           }
           .class-info{
-            font-size: 12px;
+            font-size: .24rem;
             color: #666666;
           }
           &:before{
@@ -64,9 +64,9 @@
             display: block;
             position: absolute;
             top: 50%;
-            right: 33px;
-            height: 13px;
-            width: 13px;
+            right: .66rem;
+            height: .26rem;
+            width: .26rem;
             border-style: solid;
             border-width: 2px;
             border-color: #a0a0a0 #a0a0a0 transparent transparent;
@@ -77,36 +77,60 @@
       }
     }
   }
+  &.course-table{
+    .m-item{
+      .m-tit{
+        padding: .3rem .44rem .22rem .44rem;
+      }
+      .m-date-tab{
+        .times{
+          &.selected{
+            &:after{
+              bottom: -.22rem;
+            }
+          }
+        }
+      }
+    }
+    .m-cont{
+      .m-list{
+        display: none;
+        &.selected{
+          display: block;
+        }
+      }
+    }
+  }
 }
-
 .course-detail{
   height: 100%;
   position: relative;
   .m-item{
-    padding-left: 20px;
-    height: 100%;
+    padding-left: .4rem;
+    padding-bottom: 1.16rem;
     .m-card{
       .border-1px(1px; #f0f0f0);
       .title{
-        font-size: 16px;
+        font-size: .32rem;
         color: #444444;
         font-weight: 500;
       }
       &.course-list{
-        padding: 23px 0 18px 7px;
+        padding: .46rem 0 .36rem .14rem;
         .title{
-          margin-bottom: 15px;
+          margin-bottom: .3rem;
+          font-size: .36rem;
         }
         .desc{
-          font-size: 14px;
+          font-size: .28rem;
           color: #666666;
           .list{
-            padding-left: 26px;
+            padding-left: .52rem;
             background-repeat: no-repeat;
             background-size: contain;
             &.time{
               .bg-image('../img/time');
-              margin-bottom: 10px;  
+              margin-bottom: .2rem;  
             }
             &.teacher{
               .bg-image('../img/teacher');
@@ -116,42 +140,46 @@
       }
       &.info-list,&.operate-list,&.report-list{
         .title{
-          padding-left: 10px;
+          padding-left: .2rem;
           position: relative;
-          margin-bottom: 14px;
+          margin-bottom: .28rem;
           &:before{
             content:'';
             width: 2px;
-            height: 16px;
+            height: .32rem;
             background: #FFA238;
             position: absolute;
             left: 0;
-            top: 25%;
+            top: 19%;
           }
         }
       }
       &.info-list{
-        padding: 25px 0 23px 0;
+        padding: .5rem 0 .46rem 0;
         .info{
           display: flex;
           justify-content: flex-start;
           align-items: center;
-          margin-bottom: 15px;
+          margin-bottom: .3rem;
+          &.stu-info{
+            display: block;
+            margin-bottom: 0;
+          }
           img{
-            flex: 0 0 60px;
-            width: 60px;
+            flex: 0 0 1.2rem;
+            width: 1.2rem;
             border-radius: 50%;
-            margin-right: 17px;
+            margin-right: .34rem;
           }
           .name{
-            font-size: 16px;
+            font-size: .32rem;
             color: #444444;
             font-weight: 500;
           }
           .school{
-            font-size: 12px;
+            font-size: .24rem;
             color: #666666;
-            padding-right: 72px;
+            padding-right: 1.44rem;
             .bg-image('../img/auth');
             background-position: right center;
             background-repeat: no-repeat;
@@ -159,29 +187,29 @@
           }
         }
         .desc{
-          font-size: 13px;
+          font-size: .26rem;
           color: #666666;
         }
       }
       &.operate-list{
-        padding: 20px 20px 0 0;
+        padding: .4rem .4rem 0 0;
         .operate{
           display: flex;
           justify-content: space-around;
           align-items: center;
-          height: 40px;
-          line-height: 40px;
+          height: .8rem;
+          line-height: .8rem;
           .btn{
-            flex: 0 0 140px;
-            width: 140px;
+            flex: 0 0 2.8rem;
+            width: 2.8rem;
             border: 1px solid #FFA238;
             border-radius: 6px;
-            font-size: 16px;
+            font-size: .32rem;
             color: #FFA238;
             text-align: center;
             background-color: transparent;
             cursor: pointer;
-            margin-right: 26px;
+            margin-right: .52rem;
             &:last-child{
               margin-right: 0;
               color: #FF8164;
@@ -191,12 +219,12 @@
         }
       }
       &.report-list{
-        padding:25px 15px 0 0;
+        padding:.5rem .3rem 0 0;
         .content{
-          padding-left: 10px;
+          padding-left: .2rem;
           .r-list{
             color: #666666;
-            margin-bottom: 18px;
+            margin-bottom: .36rem;
             &.progress{
               .tit{
                 .bg-image('../img/progress');
@@ -223,33 +251,33 @@
               }
             }
             &.proposal{
-              margin-bottom: 58px;
+              margin-bottom: 1.16rem;
               .tit{
                 .bg-image('../img/proposal');
               }
             }
             .tit{
-              padding-left: 18px;
-              font-size: 14px;
+              padding-left: .36rem;
+              font-size: .28rem;
               font-weight: 500;
-              background-size: 18px;
+              background-size: .36rem;
               background-repeat: no-repeat;
               background-position: left center;
-              margin-bottom: 6px;
+              margin-bottom: .12rem;
             }
             .desc{
-              font-size: 13px;
+              font-size: .26rem;
             }
             .img-con{
-              padding-top: 10px;
+              padding-top: .2rem;
               display: flex;
               justify-content: center;
               flex-flow: row wrap;
               align-items: center;
               .img-item{
-                flex: 0 0 78px;
-                width: 78px;
-                margin: 0 30px 15px 0;
+                flex: 0 0 1.56rem;
+                width: 1.56rem;
+                margin: 0 .6rem .3rem 0;
                 img{
                   max-width: 100%;
                   height: auto;
@@ -264,6 +292,32 @@
       }
     }
   }
+  &.course-table-detail{
+    .m-item{
+      .m-card{
+        .border-none();
+        &:first-child{
+          .border-1px(1px;#f0f0f0);
+        }
+        .course-list-time{
+          .times{
+            display: inline-block;
+            vertical-align: middle;
+            width:30%;
+            height: .6rem;
+            line-height: .6rem;
+            font-size: .24rem;
+            color: #444444;
+            background: #ECECEC;
+            border-radius: 3px;
+            margin-right: .12rem;
+            margin-bottom: .36rem;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
   .m-footer{
     .footer;
   }
@@ -273,7 +327,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 14px 14px 0 14px;
+  padding: .28rem .28rem 0 .28rem;
   display: flex;
   align-content: space-between;
   flex-flow: column nowrap;
@@ -281,22 +335,22 @@
     .m-item{
       padding-top:1rem;
       .desc{
-        padding-top: 15px;
-        padding-bottom: 38px;
+        padding-top: .3rem;
+        padding-bottom: .76rem;
         .title{
-          font-size: 20px;
+          font-size: .4rem;
           color: #F79D36;
         }
         p{
-          font-size: 13px;
+          font-size: .26rem;
           color: #444444;
         }
       }
       .m-qr{
-        width: 150px;
-        height: 150px;
+        width: 3rem;
+        height: 3rem;
         border: 1px solid #000000;
-        padding: 10px;
+        padding: .2rem;
         margin: 0 auto;
         img{
           max-width:100%;
@@ -310,14 +364,14 @@
     flex-flow: column nowrap;
     align-content: space-between;
     background: #FFFFFF;
-    border-radius: 13px;
-    padding: 88px 34px 42px 34px;
+    border-radius: .26rem;
+    padding: 1.76rem .68rem .84rem .68rem;
     text-align: center;
-    font-size: 16px;
+    font-size: .32rem;
     .mask{
       margin: 0 auto;
-      padding-top: 158px;
-      width: 163px;
+      padding-top: 3.16rem;
+      width: 3.26rem;
       background-size: cover;
       .bg-image('../img/pic-no-class');
       background-position: top center;
@@ -325,12 +379,12 @@
     }
     .desc{
       color: #3A454C;
-      padding: 22px 0 3rem 0 ;
+      padding: .44rem 0 3rem 0 ;
     }
     .show-more{
       color: #FFFFFF;
-      height: 41px;
-      line-height: 41px;
+      height: .8rem;
+      line-height: .8rem;
       cursor: pointer;
       background: #FFA238;
       border-radius: 6px;
@@ -345,8 +399,8 @@
     }
   }
   .m-footer{
-    padding: 22px 0;
-    font-size: 12px;
+    padding: .44rem 0;
+    font-size: .24rem;
     color: #878787;
     text-align: center;
     .call{
@@ -358,19 +412,19 @@
   height: 100%;
   position: relative;
   .m-item{
-    padding-top: 13px;
-    padding-left: 20px;
+    padding-top: .26rem;
+    padding-left: .4rem;
     height: 100%;
     .title{
-      font-size: 16px;
+      font-size: .32rem;
       color: #444444;
-      padding-left: 10px;
+      padding-left: .2rem;
       position: relative;
       font-weight: 500;
       &:before{
         content:'';
         width: 2px;
-        height: 16px;
+        height: .32rem;
         background: #FFA238;
         position: absolute;
         left: 0;
@@ -379,26 +433,26 @@
     }
     .m-card{
       .border-1px(1px; #f0f0f0);
-      padding: 21px 0 ;
+      padding: .42rem 0 ;
       .info{
         display: flex;
         align-items: center;
         img{
-          flex: 0 0 96px;
-          width: 96px;
-          margin-right: 13px;
+          flex: 0 0 1.92rem;
+          width: 1.92rem;
+          margin-right: .26rem;
         }
         .class-name{
-          font-size: 16px;
+          font-size: .32rem;
           color: #444444;
           font-weight: 500;
         }
         .class-count, .class-times{
-          font-size: 12px;
+          font-size: .24rem;
           color: #666666;
         }
         .class-count{
-          margin:5px 0 12px 0; 
+          margin:.01rem 0 .24rem 0; 
         }
       }
     }
@@ -413,18 +467,18 @@
     position: relative;
     // overflow: hidden;
     .m-header{
-      padding: 39px 0 0 33px;
+      padding: .78rem 0 0 .66rem;
       border-bottom: 6px solid #F0F0F0;
       position: relative;
       .content-wrap{
         position: relative;
         display: flex;
-        margin-bottom: 17px;
+        margin-bottom: .34rem;
         .avatar{
-          flex: 0 0 96px;
-          width: 96px;
-          height: 96px;
-          margin-right: 13px;
+          flex: 0 0 1.52rem;
+          width: 1.52rem;
+          height: 1.52rem;
+          margin-right: .26rem;
           img{
             max-width: 100%;
             height: auto;
@@ -432,21 +486,21 @@
         }
         .content{
           color: #FFFFFF;
-          padding-top: 8px;
+          padding-top: .16rem;
           .class-title{
-            font-size: 16px;
-            margin-bottom: 10px;
+            font-size: .32rem;
+            margin-bottom: .2rem;
             font-weight: bold;
           }
           .class-time{
-            font-size: 12px;
+            font-size: .24rem;
           }
         }
       }
       .desc-wrap{
         position: relative;
-        margin: 17px 0 14px 0;
-        font-size: 14px;
+        margin: .34rem 0 .28rem 0;
+        font-size: .28rem;
         color: #666666;
       }
       .background-wrap{
@@ -454,7 +508,7 @@
         left: 0;
         top:0;
         width: 100%;
-        height: 115px;
+        height: 2.1rem;
         z-index: -1;
         overflow: hidden;
         .background{
@@ -470,51 +524,45 @@
       }
     }
     .m-content{
+      overflow: hidden;
       .m-box{
-        padding: 18px 0 11px 0;
-        &:last-child{
-          padding: 21px 0 20px 0;
-          .border-none();
-        }
+        padding: .36rem 0 .22rem 0;
         .border-1px(1px;#f0f0f0);
         .title, .m-date-tab{
-          padding: 0 19px 0 17px
+          padding: 0 .38rem 0 .34rem
         }
         .title{
-          font-size: 16px;
+          font-size: .32rem;
           color: #444444;
-          padding-left: 27px;
+          padding-left: .54rem;
           position: relative;
           font-weight: 500;
-          margin-bottom: 17px;
+          margin-bottom: .34rem;
           &:before{
             content:'';
             width: 2px;
-            height: 16px;
+            height: .32rem;
             background: #FFA238;
             position: absolute;
-            left: 17px;
+            left: .34rem;
             top: 24%;
           }
         }
         .m-time{
-          text-align: center;
-          margin-bottom: 11px;
-          display: flex;
-          flex-flow: row wrap;
-          justify-content: space-around;
-          align-items: center;
           .times{
-            flex: 0 0 100px;
-            width:100px;
-            height: 30px;
-            line-height: 30px;
+            display: inline-block;
+            vertical-align: middle;
+            width: 30%;
+            height: .6rem;
+            line-height: .6rem;
             border: 1px solid #666666;
             border-radius: 3px;
-            font-size: 12px;
+            font-size: .24rem;
             color: #666666;
-            margin-bottom: 20px;
+            margin-right: .12rem;
+            margin-bottom: .4rem;
             cursor: pointer;
+            text-align: center;
             .default{
               display: block;
               width: 100%;
@@ -534,27 +582,31 @@
                 position:absolute;
                 right: 0;
                 top:0;
-                width: 14px;
-                height: 14px;
+                width: .24rem;
+                height: .24rem;
                 .bg-image('../img/full');
-                background-size: 14px;
+                background-size: .24rem;
                 background-repeat: no-repeat;
                 background-position: right top;
               }
             }
           }
         }
-        .m-btns{
-          margin: 0 auto;
-          text-align: center;
-          background: #FFA238;
-          border-radius: 6px;
-          font-size: 16px;
-          color: #FFFFFF;
-          width: 341px;
-          height: 41px;
-          line-height: 41px;
+        &:nth-child(2){
+          padding-left: .4rem;
+          .border-none();
         }
+      }
+      .m-btns{
+        margin: 0 auto .4rem auto;
+        text-align: center;
+        background: #FFA238;
+        border-radius: 6px;
+        font-size: .32rem;
+        color: #FFFFFF;
+        width: 6.82rem;
+        height: .82rem;
+        line-height: .82rem;
       }
     }
   }
@@ -563,11 +615,11 @@
       .m-box{
         .border-none();
         .m-code{
-          width: 220px;
-          height: 220px;
+          width: 4.4rem;
+          height: 4.4rem;
           border: 1px solid #000; 
-          padding: 14px;
-          margin: 0 auto 16px auto;
+          padding: .28rem;
+          margin: 0 auto .32rem auto;
         }
         .desc{
           text-align: center
@@ -575,13 +627,142 @@
       }
     }
     .m-footer{
-      padding: 22px 0;
-      font-size: 12px;
+      padding: .44rem 0;
+      font-size: .24rem;
       color: #878787;
       text-align: center;
       .call{
         color: #8492FC;      
       }      
+    }
+  }
+}
+.buy-course{
+  .m-item{
+    .buy-sec{
+      padding: .34rem .4rem .44rem .4rem;
+      &:first-child{
+        border-bottom: 6px solid #f0f0f0;
+      }
+      .title{
+        .name{
+          font-size: .36rem;
+          color: #000000;
+          margin-bottom: .08rem;
+        }
+        .desc{
+          font-size: .24rem;
+          color: #888888;
+        }
+      }
+      .course-list{
+        display: flex;
+        align-items: center;
+        padding: .48rem 0;
+        &:first-child{
+          .border-1px(1px;#f0f0f0);
+        }
+        .avatar{
+          flex: 0 0 1.34rem;
+          width:1.34rem;
+          margin-right: .24rem;
+          img{
+            max-width: 100%;
+            height: auto;
+          }
+        }
+        .content{
+          margin-right: .46rem;
+          span{
+            font-size: .24rem;
+            color: #AAAAAA;
+            margin-left: .08rem;
+          }
+          .count{
+            font-size: .28rem;
+            color: #444444;
+          }
+          .price{
+            font-size: .36rem;
+            color: #FE573D;
+            .discount{
+              display: inline-block;
+              vertical-align: middle;
+              .border-1px(1px; #FE573D);
+              &:after{
+                bottom:.16rem;
+              }
+            }
+            .msk{
+              display: inline-block;
+              vertical-align: middle;
+              width: 1rem;
+              height: .36rem;
+              .bg-image('../img/discount');
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: right center;
+            }
+          }
+        }
+        .btn{
+          background: #FFA238;
+          border-radius: 3px;
+          font-size: .28rem;
+          color: #fff;
+          width: 1.54rem;
+          height: .7rem;
+          line-height: .7rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+  &.buy-result{
+    .m-item{
+      .buy-sec{
+        border-bottom: none;
+        .title{
+          .name{
+            margin-bottom: .24rem;
+          }
+        }
+        .course-list{
+          padding-top:0;
+          padding-bottom: 1rem;
+          display: block;
+          .avatar,.content{
+            display: inline-block;
+            vertical-align: top;
+          }
+          .content{
+            .class-count, .class-time{
+              font-size: .28rem;
+              color: #AAAAAA;
+            }
+          }
+        }
+        .comfirm{
+          font-size: .32rem;
+          color: #FFFFFF;
+          background: #FFA238;
+          border-radius: 6px;
+          width: 6.82rem;
+          height: .82rem;
+          line-height:.82rem;
+          text-align:center;
+          margin-bottom: .2rem;
+        }
+        .agree-buy{
+          font-size: .24rem;
+          color: #878787;
+          text-align: center;
+          a{
+            color: #FFA238;
+            text-decoration: underline;
+          }
+        }
+      }
     }
   }
 }
