@@ -11,7 +11,7 @@ let config = {
     entry: entries,
     output: {
         path: path.join(__dirname, 'dist'),
-        publicPath: '/dist/',
+        publicPath: '../',
         filename: 'js/[name].js',
         chunkFilename: 'js/[id].chunk.js?[chunkhash]'
     },
@@ -31,7 +31,7 @@ let config = {
                     loader: 'file-loader?name=./fonts/[name].[ext]'
                 },{
                     test: /\.(png|jpg|gif)$/,
-                    loader: 'url-loader?limit=8192&name=./img/[hash].[ext]'
+                    loader: 'url-loader?limit=8192&name=img/[hash].[ext]'
                 },{
                     test: /\.js$/,
                     exclude: /node_modules/,
