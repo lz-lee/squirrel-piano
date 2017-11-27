@@ -701,7 +701,7 @@
 .buy-course{
   .m-item{
     .buy-sec{
-      padding: .34rem .4rem .44rem .4rem;
+      padding: .34rem 0 .44rem .4rem;
       &:first-child{
         border-bottom: 6px solid #f0f0f0;
       }
@@ -717,14 +717,15 @@
         }
       }
       .course-list{
-        display: flex;
-        align-items: center;
-        padding: .48rem 0;
-        &:first-child{
+        width: 100%;
+        padding: .48rem .4rem .48rem 0;
+        overflow: hidden;
+        position: relative;
+        &:nth-child(2){
           .border-1px(1px;#f0f0f0);
         }
         .avatar{
-          flex: 0 0 1.34rem;
+          float: left;
           width:1.34rem;
           margin-right: .24rem;
           img{
@@ -733,15 +734,18 @@
           }
         }
         .content{
-          margin-right: .46rem;
+          float: left;
+          padding: .22rem 0;
+          margin-right: .34rem;
           span{
-            font-size: .24rem;
+            font-size: 12px;
             color: #AAAAAA;
             margin-left: .08rem;
           }
           .count{
-            font-size: .28rem;
+            font-size: 14px;
             color: #444444;
+            margin-bottom: .1rem;
           }
           .price{
             font-size: .36rem;
@@ -767,6 +771,7 @@
           }
         }
         .btn{
+          float: right;
           background: #FFA238;
           border-radius: 3px;
           font-size: .28rem;
@@ -774,6 +779,7 @@
           width: 1.54rem;
           height: .7rem;
           line-height: .7rem;
+          margin-top: .22rem;
           text-align: center;
         }
       }

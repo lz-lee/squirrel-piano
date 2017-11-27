@@ -11,7 +11,7 @@ let config = {
     entry: entries,
     output: {
         path: path.join(__dirname, 'dist'),
-        publicPath: '../',
+        publicPath: '/dist/',
         filename: 'js/[name].js',
         chunkFilename: 'js/[id].chunk.js?[chunkhash]'
     },
