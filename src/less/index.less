@@ -110,6 +110,32 @@
       }
     }
   }
+  &.no-course{
+    .m-item{
+      .m-cont{
+        display: flex;
+        flex-flow: column nowrap;
+        align-content: space-between;
+        background: #FFFFFF;
+        padding: 1.06rem .68rem .84rem .66rem;
+        text-align: center;
+        font-size: .32rem;
+        .mask{
+          margin: 0 auto;
+          padding-top: 3.16rem;
+          width: 3.26rem;
+          background-size: cover;
+          .bg-image('../img/pic-no-class');
+          background-position: top center;
+          background-repeat: no-repeat; 
+        }
+        .desc{
+          color: #3A454C;
+          padding: .44rem 0 3rem 0 ;
+        }
+      }
+    }
+  }
 }
 .course-detail{
   height: 100%;
@@ -408,6 +434,13 @@
       bottom: .38rem;
     }
   }
+  &.pay-success{
+    .m-item{
+      .desc{
+        padding: .44rem 0 4.28rem 0 ;
+      }
+    }
+  }
   .m-item{
     display: flex;
     flex-flow: column nowrap;
@@ -702,9 +735,7 @@
   .m-item{
     .buy-sec{
       padding: .34rem 0 .44rem .4rem;
-      &:first-child{
-        border-bottom: 6px solid #f0f0f0;
-      }
+      border-bottom: 6px solid #f0f0f0;
       .title{
         .name{
           font-size: .36rem;
@@ -721,13 +752,15 @@
         padding: .48rem .4rem .48rem 0;
         overflow: hidden;
         position: relative;
-        &:nth-child(2){
-          .border-1px(1px;#f0f0f0);
+        .border-1px(1px;#f0f0f0);
+        &:last-of-type{
+          .border-none();
         }
         .avatar{
           float: left;
           width:1.34rem;
-          margin-right: .24rem;
+          height: 100%;
+          margin-right: .18rem;
           img{
             max-width: 100%;
             height: auto;
@@ -735,8 +768,8 @@
         }
         .content{
           float: left;
-          padding: .22rem 0;
-          margin-right: .34rem;
+          padding-top: .18rem;
+          padding-right: .24rem;
           span{
             font-size: 12px;
             color: #AAAAAA;
@@ -755,7 +788,7 @@
               vertical-align: middle;
               .border-1px(1px; #FE573D);
               &:after{
-                bottom:.16rem;
+                bottom:50%;
               }
             }
             .msk{
@@ -779,7 +812,7 @@
           width: 1.54rem;
           height: .7rem;
           line-height: .7rem;
-          margin-top: .22rem;
+          margin-top: .32rem;
           text-align: center;
         }
       }
@@ -828,6 +861,96 @@
             color: #FFA238;
             text-decoration: underline;
           }
+        }
+      }
+    }
+  }
+}
+.experience{
+  width: 100%;
+  .m-item{
+    width: 100%;
+    position: relative;
+    .m-banner{
+      img{
+        width: 100%;
+      }
+    }
+    .m-cont{
+      position: relative;
+      .m-form{
+        width: 100%;
+        padding: .24rem .86rem .92rem .83rem;
+        background-color: #fffbe3;
+        .input-cont{
+          width: 5.81rem;
+          margin-bottom: .28rem;
+          input{
+            width: 100%;
+            background-color: #ffffff;
+	          border-radius: 6px;
+	          border: solid 1px #ec5a37;
+            color: #ec5a37;
+            font-size: .28rem;
+            height: .7rem;
+            line-height: .7rem;
+            padding-left: .25rem;
+          }
+          &.ip-inline{
+            overflow: hidden;
+
+            .code{
+              float: left;
+              width: 3.66rem;
+            }
+            .code-btn{
+              float: right;
+              width: 1.96rem;
+              height: .7rem;
+              line-height: .7rem;
+              border-radius: 6px;
+	            border: solid 1px #ec5a37;
+              color: #ec5a37;
+              font-size: .28rem;
+              text-align: center;
+              button{
+                outline: none;
+                border:none;
+                background: transparent;
+                width: 100%;
+                height: 100%;
+                &.btn-disabled{
+                  pointer-events: none;
+                }
+              }
+            }
+          }
+          &.ip-login{
+            height: .78rem;
+            line-height: .78rem;
+            background-color: #ec5a37;
+            text-align: center;
+            font-size: .28rem;
+            color: #fff;
+            button{
+                outline: none;
+                border:none;
+                background: transparent;
+                width: 100%;
+                height: 100%;
+              }
+          }
+        }
+      }
+    }
+    .m-sec{
+      position: relative;
+      .m-footer{
+        position: absolute;
+        bottom: 0;
+        &.fixed{
+          position: fixed;
+          bottom: 0;
         }
       }
     }
