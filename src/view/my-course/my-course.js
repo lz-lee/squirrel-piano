@@ -1,4 +1,4 @@
-import '../less/index.less'
+import 'common/less/index.less'
 
 $('.course').click(function() {
   let id = $(this).attr('id')

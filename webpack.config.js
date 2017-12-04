@@ -8,7 +8,7 @@ const pathResolve = (dir) => {
   return path.join(__dirname, dir)
 }
 
-let entries = getEntry('src/js/*.js')
+let entries = getEntry('src/view/**/*.js')
 let chunks = Object.keys(entries)
  
 let config = {
@@ -29,15 +29,15 @@ let config = {
   },
   module: {
     loaders: [
-      {
-        test: /\.js$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: pathResolve('src'),
-        options: {
-          formatter: require('eslint-friendly-formatter')
-        }
-      },
+      // {
+      //   test: /\.js$/,
+      //   loader: 'eslint-loader',
+      //   enforce: 'pre',
+      //   include: pathResolve('src'),
+      //   options: {
+      //     formatter: require('eslint-friendly-formatter')
+      //   }
+      // },
       {
           test: /\.css$/,
           use: ExtractTextPlugin.extract({
@@ -150,16 +150,17 @@ let config = {
     hot: true
   }
 }
-let pages = Object.keys(getEntry('src/view/*.html'))
+let pages = Object.keys(getEntry('src/view/**/*.html'))
 
 pages.forEach((pathname) => {
     let conf = {
-        filename: 'view/' + pathname + '.html',
-        template: 'src/view/' + pathname + '.html',
+      
+        filename: `view/${pathname}.html`,
+        template: `src/view/${pathname}/${pathname}.html`,
         inject: false
     }
     if(pathname in config.entry){
-        conf.favicon = 'src/img/favicon.ico'
+        conf.favicon = 'src/common/img/favicon.ico'
         conf.inject = 'body'
         conf.chunks = ['vendors', pathname]
         conf.hash = true
