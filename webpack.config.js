@@ -3,6 +3,8 @@ const glob = require('glob')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
+
 
 const pathResolve = (dir) => {
   return path.join(__dirname, dir)
@@ -29,15 +31,15 @@ let config = {
   },
   module: {
     loaders: [
-      {
-        test: /\.js$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: pathResolve('src'),
-        options: {
-          formatter: require('eslint-friendly-formatter')
-        }
-      },
+      // {
+      //   test: /\.js$/,
+      //   loader: 'eslint-loader',
+      //   enforce: 'pre',
+      //   include: pathResolve('src'),
+      //   options: {
+      //     formatter: require('eslint-friendly-formatter')
+      //   }
+      // },
       {
           test: /\.css$/,
           use: ExtractTextPlugin.extract({
@@ -140,7 +142,10 @@ let config = {
     //         collapseWhitespace: false
     //     }
     // }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DllReferencePlugin({
+      manifest: require('./dll.manifest.json')
+    })
   ],
   devServer: {
     contentBase: './dist/view/',
@@ -166,6 +171,24 @@ pages.forEach((pathname) => {
     }
     config.plugins.push(new HtmlWebpackPlugin(conf))
 })
+
+
+config.plugins.push(new AddAssetHtmlPlugin([
+  {
+    filepath: path.resolve(__dirname, './dist/*dll.js'),
+    hash: true,
+    publicPath: '/dist/',
+    includeSourcemap: false
+  },
+  {
+    filepath: path.resolve(__dirname, './dist/css/*dll.css'),
+    hash: true,
+    publicPath: '/dist/css',
+    includeSourcemap: false,
+    typeOfAsset: 'css'  // Can be set to css to create a link-tag instead of a script-tag.
+  }
+]))
+
 
 module.exports = config
 
